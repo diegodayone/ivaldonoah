@@ -4,6 +4,8 @@ import MyBadge from "./MyBadge";
 import fantasyBooks from "../fantasy.json";
 import BookList from "./BookList";
 import { Input } from "reactstrap";
+import TestComponent from "./TestComponent";
+import DisplayComponent from "./DisplayComponent";
 
 class BookStore extends React.Component {
   constructor(props) {
@@ -11,13 +13,24 @@ class BookStore extends React.Component {
 
     this.state = {
       filterValue: "",
-      starting: 0
+      starting: 0,
+      searchValue: null
     };
   }
+
+  onSearchChange = value => {
+    this.setState({
+      searchValue: value
+    });
+  };
 
   render() {
     return (
       <div className="container">
+        {/* <TestComponent handleSearchChange={this.onSearchChange} passMe5={value => console.log(value)} />
+
+        <DisplayComponent display={this.state.searchValue} /> */}
+
         <AlertSign text="Here I'm balancing by putting only Noah's name" />
 
         <MyBadge color="warning" text="this badge is a warning" />
